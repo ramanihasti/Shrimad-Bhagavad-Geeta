@@ -12,18 +12,22 @@ const icons = [
   {
     id: 1,
     icon: faFacebook,
+    url: "https://www.facebook.com",
   },
   {
     id: 2,
     icon: faTwitter,
+    url: "https://www.twitter.com",
   },
   {
     id: 3,
     icon: faInstagram,
+    url: "https://www.instagram.com",
   },
   {
     id: 4,
     icon: faYoutube,
+    url: "https://www.youtube.com",
   },
 ];
 
@@ -49,12 +53,19 @@ function Footer() {
         <div className="flex flex-row gap-2 ml-[-26px] md:ml-0 md:gap-6">
           {icons.map((value, index) => {
             return (
-              <FontAwesomeIcon
-                // key={value.id}
+              <a
                 key={index}
-                icon={value.icon}
-                className="bg-[#ae8d6b] p-2 rounded-full border border-[#dbba7d] text-white hover:border-white hover:shadow-md hover:shadow-[#cdad6e] cursor-pointer"
-              />
+                href={value.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  // key={value.id}
+                  key={index}
+                  icon={value.icon}
+                  className="bg-[#ae8d6b] p-2 rounded-full border border-[#dbba7d] text-white hover:border-white hover:shadow-md hover:shadow-[#cdad6e] cursor-pointer"
+                />
+              </a>
             );
           })}
         </div>
